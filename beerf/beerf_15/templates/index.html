@@ -19,20 +19,22 @@ PROBLEMS: 1)confirm order
 </head>
 <body>
 <!--NAVBAR -->
-<nav class="navbar navbar-default navbar-fixed-top nav-container"  ng-controller="StoreController as store">
-  <div class="container-fluid"  ng-repeat="product in store.products">
-    <div class="navbar-header col-md-3">
-      <a class="navbar-brand" href="#">BEER-FACTORY</a>
-    </div>
-    <ul class="top-info col-md-9">
-    <!-- <ng-repeat="x in product.inventory" ng-hide="$index!==product.inventory.length-1"> -->
-      <li class="col-md-3"> DAY: {$product.inventory[product.inventory.length-1].day$} </li>
-	  <li class="col-md-3"> INVENTORY: {$product.inventory[product.inventory.length-1].no_inv$}</li>
-	  <li class="col-md-3">MONEY: {$ store.factoryDetails.data.factory_1.money $}</li>
-	  <li class="col-md-3">Hi {{name}}</li>
-    </ul>
-  </div>
-</nav>
+<div ng-controller = "StoreController as store">
+<nav class="navbar navbar-default navbar-fixed-top nav-container">
+        <div class="container-fluid"   ng-repeat="product in store.products">
+            <div class="navbar-header col-md-3">
+              <a class="navbar-brand" href="#">BEER-FACTORY</a>
+            </div>
+                
+            <ul class="top-info col-md-9">
+              <li class="col-md-2"> DAY: {$ store.status.data.turn $} </li>
+              <li class="col-md-2"> STAGE: {$ store.status.data.stage $} </li>
+              <li class="col-md-2"> INVENTORY: {$ store.factoryDetails.data.factory_1.inventory $}</li>
+              <li class="col-md-2"> MONEY: {$ store.factoryDetails.data.factory_1.money $}</li>
+              <li class="col-md-2"> Hi {{ name }}</li>  
+            </ul>
+        </div>
+    </nav>
 <!--END OF NAVBAR-->
 
 <div class="progress">
@@ -55,7 +57,7 @@ PROBLEMS: 1)confirm order
 <map name="map1">
     <area alt="" title="fact1" name="fact1" href="#" ng-click="store.mapclicked(-1)" shape="poly" coords="508,558,138,559,132,547,137,539,145,538,144,467,165,467,164,435,172,429,173,278,180,279,180,267,200,266,200,409,210,408,209,236,230,235,232,218,248,218,250,377,264,372,264,391,279,392,280,310,295,295,297,284,319,280,326,280,327,205,333,205,333,191,368,189,368,203,377,204,376,335,396,335,398,347,409,344,412,266,404,266,407,259,413,258,414,243,431,243,432,257,439,258,440,265,432,266,439,342,458,343,465,350,469,363,469,419,494,419,502,427,503,437,504,534,513,540,518,549,516,556" />
 
-    <area alt="" title="fact2" name="fact2" href="#" shape="poly" coords=" " ng-click="store.mapclicked(-2)" />
+    <area alt="" title="fact2" name="fact2" href="#" ng-click="store.mapclicked(-2)" shape="poly" coords="873,502,873,490,879,488,878,428,882,422,896,422,896,388,902,380,910,379,913,336,910,336,910,332,914,330,915,322,925,320,925,330,928,330,929,337,926,338,928,380,932,380,933,376,942,375,942,303,949,302,948,294,964,292,965,301,969,300,970,343,980,344,986,350,986,354,994,360,994,425,998,426,999,394,1008,400,1006,307,1018,306,1018,318,1029,318,1029,414,1033,417,1032,334,1044,335,1044,343,1047,342,1047,429,1050,430,1050,448,1056,447,1055,460,1059,474,1062,490,1068,489,1068,501" />
 <div id = "zone1">
     <area alt="" title="ret1" name="1" href="#" ng-click="store.mapclicked(1)" shape="poly" coords="708,726,709,635,688,635,722,581,810,581,810,555,828,555,827,582,852,582,880,635,860,635,860,725" />
     
